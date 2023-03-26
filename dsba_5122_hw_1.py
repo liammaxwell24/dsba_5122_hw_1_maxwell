@@ -30,7 +30,7 @@ y_val = st.sidebar.selectbox("Pick your y-axis",filtered_contract_data.select_dt
 scatter = alt.Chart(filtered_contract_data, title=f"{x_val} and {y_val}").mark_point().encode(
     alt.X(x_val,title=f'{x_val}'),
     alt.Y(y_val,title=f'{y_val}'),
-    tooltip=['name',x_val, y_val]).configure_mark(
+    tooltip=['name','new_contract_AAV',x_val, y_val]).configure_mark(
     opacity=0.5,
     color='blue')
 st.altair_chart(scatter, theme="streamlit", use_container_width=True)
